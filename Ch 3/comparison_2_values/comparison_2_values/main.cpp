@@ -10,28 +10,31 @@ T from_two_max(T a, T b)
 }
 
 template <typename T>
-void from_min_to_max_out(T a, T b, T c)
+void from_min_to_max_out(T& a, T& b, T& c)
 {
-	//T max, min, mid;
-	//max = from_two_max(a, b);
-	//if (max == a)
-	//{
-	//	min = b;
-	//}
-	//else
-	//{
-	//	min = a;
-	//}
-
-	T max = c > (max = (a > b ? a : b)) ? c : max;
-	T min = c < (min = (a < b ? a : b)) ? c : min;
-	T mid = c > (mid = (a > b ? b : a)) ? c : mid;
+	T mid, max, min;
+	max = c > (max = (a > b ? a : b)) ? c : max;
+	min = c < (min = (a < b ? a : b)) ? c : min;
+	if ((max == a && min == c) || (max == c && min == a))
+	{
+		mid = b;
+	}
+	else if((max == b && min == c) || (max == c && min == b))
+	{
+		mid = a;
+	}
+	else if ((max == a && min == b) || (max == b && min == a))
+	{
+		mid = c;
+	}
 	cout << min << endl 
-		 //<< mid << endl 
+		 << mid << endl 
 		 << max << endl;
 }
 
 void main()
 {
-	from_min_to_max_out(1, 2, 3);
+	int a = 1, b = 2, c = 3;
+	from_min_to_max_out(a, b, c);
+	from_min_to_max_out(string("abc"),string("cda"), string("bcd"));
 }
