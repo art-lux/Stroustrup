@@ -4,12 +4,6 @@
 using namespace std;
 
 template <typename T>
-T from_two_max(T a, T b)
-{
-	return a > b ? a : b;
-}
-
-template <typename T>
 void from_min_to_max_out(T& a, T& b, T& c)
 {
 	T mid, max, min;
