@@ -21,5 +21,11 @@ void main()
 		{
 			cout << "the numbers is equal!" << endl;
 		}
+		auto a = round(abs(input1 -input2) * 100) / 100;
+		
+		if (a <= 0.01 && a > 0)
+		{
+			cout << "the numbers the numbers are almost equal!" << endl;
+		}
 	}
 }
