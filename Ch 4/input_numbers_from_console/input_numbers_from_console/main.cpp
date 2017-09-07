@@ -4,7 +4,7 @@ using namespace std;
 
 void main()
 {
-	int input1, input2;
+	double input1, input2;
 	while (cin >> input1 >> input2)
 	{
 		if (input1 > input2)
