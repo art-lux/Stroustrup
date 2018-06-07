@@ -4,28 +4,19 @@ using namespace std;
 
 void main()
 {
-	double input1, input2;
-	while (cin >> input1 >> input2)
+	double input, max_value(numeric_limits<double>::min()), min_value(numeric_limits<double>::max());
+	while (cin >> input)
 	{
-		if (input1 > input2)
+		if (input > max_value)
 		{
-			cout << "the largest value is: " << input1 << endl;
-			cout << "the smallest value is: " << input2 << endl;
+			cout << "the largest value is: " << input << endl;
+			max_value = input;
 		}
-		else if(input1 < input2)
+		if(input < min_value)
 		{
-			cout << "the largest value is: " << input2 << endl;
-			cout << "the smallest value is: " << input1 << endl;
+			cout << "the smallest value is: " << input << endl;
+			min_value = input;
 		}
-		else
-		{
-			cout << "the numbers is equal!" << endl;
-		}
-		auto a = round(abs(input1 -input2) * 100) / 100;
 		
-		if (a <= 0.01 && a > 0)
-		{
-			cout << "the numbers the numbers are almost equal!" << endl;
-		}
 	}
 }
