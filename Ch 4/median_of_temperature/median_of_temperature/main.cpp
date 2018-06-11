@@ -22,10 +22,6 @@ int main()
 	{
 		cout << temps[temps.size() / 2] << endl;
 	}
-
-	for (auto el : temps)
-	{
-		cout << el << endl;
-	}
+		
 	return 0;
 }
