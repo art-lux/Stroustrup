@@ -11,7 +11,11 @@ double ctok(double с) // Преобразует темпера туру
 int main()
 {
 	double c = 0;
-	cin >> c;
+	for (;;) {
+		cin >> c;
+		if (c > -273.15) break;
+		cout << "incorrect input!\n" << endl;
+	}
 	double k = ctok(c);
 	cout << k << endl;
 }
