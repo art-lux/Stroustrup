@@ -14,7 +14,8 @@ T check__(const R& r)
 
 void main()
 {
-	vector<int> numbers;
+	vector<double> numbers;
+	vector<double> difference;
 	cout << "Enter quantity of summable values: ";
 	int quantity;
 	cin >> quantity;
@@ -22,6 +23,10 @@ void main()
 	for (int num; cin >> num; )
 	{
 		numbers.push_back(num);
+	}
+	for (int i = 1; i < numbers.size(); ++i)
+	{
+		difference.push_back(numbers[i] - numbers[i - 1]);
 	}
 
 	int res = 0;
@@ -38,4 +43,9 @@ void main()
 		cout << " " << numbers[i] << " ";
 	}
 	cout << "): " << res << endl;
+
+	for (auto el : difference)
+	{
+		cout << el << endl;
+	}
 }
